@@ -20,37 +20,17 @@ fn main() -> io::Result<()> {
 
     let mut reader = BufReader::new(lobby_stream.try_clone()?);
 
-    // Read list of servers
-    println!("\nAvailable Servers:");
-    for line in reader.by_ref().lines() {
-        let line = line?;
-        if line.trim().is_empty() {
-            break;
-        }
-        println!("{}", line);
-    }
-
-    // Ask user which server to connect to
-    print!("\nEnter index number of server to connect to: ");
-    io::stdout().flush()?;
-    let mut choice = String::new();
-    io::stdin().read_line(&mut choice)?;
-    let choice = choice.trim();
-
-    // Tell the lobby which server you chose
-    writeln!(lobby_stream, "{}\n", choice)?;
-    lobby_stream.flush()?;
-
-
     // Connect directly to the chosen server
     let mut buffer = [0u8; 128];
     let size = lobby_stream.read(&mut buffer)?;
     let target_ip = String::from_utf8_lossy(&buffer[..size]).trim().to_string();
 
     println!("Connecting to server at: {}", target_ip);
-    let server_stream = TcpStream::connect(target_ip)?;
+    let mut server_stream = TcpStream::connect(target_ip)?;
 
-    write!(&server_stream, "client {}\n", username);
+    write!(&server_stream, "client {}\n", username)?;
+    server_stream.flush()?;
+
 
     let read_stream = server_stream.try_clone()?;
     let write_stream = server_stream.try_clone()?;
