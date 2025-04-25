@@ -54,8 +54,9 @@ fn msg_fetcher(stream: TcpStream, clients: ClientList) {
             Ok(0) => break,
             Ok(_) if buffer.trim().is_empty() => break,
             Ok(_) => {
-                let message = format!("{}: {}", username, buffer.trim());
-                println!("{}", message);
+                let message = format!("{}",buffer.trim());
+                print!("{}", message);
+                // println!("{}", message);
 
                 if let Err(e) = broadcast_message(&clients, &username, &message) {
                     eprintln!("Broadcast error: {}", e);
@@ -137,6 +138,7 @@ fn main() -> io::Result<()> {
     let serv_name = serv_name.trim().to_string();
 
     let serv_ip = get_ip();
+    // let serv_ip = "0.tcp.eu.ngrok.io:14770";
 
     let mut to_lobby = TcpStream::connect(lobby_addr).expect("Could not connect to lobby");
     writeln!(to_lobby, "server {} {}", serv_ip, serv_name).expect("Failed to register with lobby");
