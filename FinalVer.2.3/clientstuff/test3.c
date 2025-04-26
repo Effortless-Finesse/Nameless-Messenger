@@ -9,7 +9,7 @@
 #include <string.h>    
 #include <fcntl.h>
 #include <stdbool.h>   
-
+//gtk, pipes, shm, mutex, sephamores, all used here 
 //global vars--------------------------------------------------------------------------------------------
 int to_child[2];    //peter PIPEr
 int from_child[2];  //picked a pack of pickled PIPEs

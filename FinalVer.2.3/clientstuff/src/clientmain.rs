@@ -1,10 +1,10 @@
 use std::{
     io::{self, BufRead, BufReader, Write, Read},
-    net::TcpStream,
+    net::TcpStream, //sockets too
     sync::mpsc,
     thread,
 };
-use aes_gcm::{Aes256Gcm, Key, Nonce}; // AES cipher
+use aes_gcm::{Aes256Gcm, Key, Nonce}; // AES cipher Encryption Fully suppported
 use aes_gcm::aead::{Aead};
 use aes_gcm::KeyInit;  
 use rand::RngCore;

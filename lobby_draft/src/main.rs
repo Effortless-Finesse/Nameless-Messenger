@@ -5,7 +5,7 @@ use std::{
     sync::{Arc, Mutex},
     thread,
 };
-
+//this lobby
 type ServerList = Arc<Mutex<HashMap<String, String>>>; // ip -> name
 
 fn get_ip() -> String {

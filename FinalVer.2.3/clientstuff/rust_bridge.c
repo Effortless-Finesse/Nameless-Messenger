@@ -7,7 +7,7 @@
 #include <signal.h>
 #include <glib.h>
 #include <gtk/gtk.h>
-
+//and here
 static int to_child = -1, from_child = -1;
 static pid_t child_pid = -1;
 
