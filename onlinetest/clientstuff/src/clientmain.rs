@@ -33,7 +33,7 @@ fn main() -> io::Result<()> {
     // let target_ip = String::from_utf8_lossy(&buffer[..size]).trim().to_string();
     
     // Bypass lobby for now if you want:
-    let target_ip = "0.tcp.ap.ngrok.io:10346".to_string();
+    let target_ip = "0.tcp.ap.ngrok.io:14879".to_string();
 
 
     // Connect directly to the chosen server
