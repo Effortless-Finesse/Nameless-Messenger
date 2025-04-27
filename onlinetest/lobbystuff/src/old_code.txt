@@ -1,0 +1,42 @@
+
+type ServerList = Arc<Mutex<HashMap<String, SharedStream>>>;
+
+fn main()
+{
+    let listener = TcpListener::bind("localhost:8080").expect("Could not bind listener");
+
+    let servers: ServerList = Arc::new(Mutex::new(HashMap::new()));
+
+    for stream in listener.incoming()
+    {
+        let mut buffer = [0;512]:
+        let _ = stream.read(&buffer).expect("Could not read to buffer");
+        let request = String::from_utf8_lossy(&buffer);
+
+        if (request.starts_with("server"))
+        {
+            thread::spawn(move || {
+                let (ip, name) = getServerInfo(request);
+                add_server(ip, name);
+            });
+        }
+        else if (request.starts_with("client"))
+        {
+            thread::spawn(move || {
+                sendServerList(); //send the client a list of the servers available
+                handleReply(); //recieve the client's response and connect to the desired server
+            });
+        }
+    }
+}
+
+fn add_server(let ip, let name)
+{
+    let servers_lock = servers.lock();
+    servers_lock.insert(ip, name);
+}
+
+fn getServerInfo(let request: String)
+{
+
+}

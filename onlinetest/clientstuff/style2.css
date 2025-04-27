@@ -1,0 +1,128 @@
+#nameinput_window, #chat_window {
+    background-color: #2e2d2d;
+    border: 2px solid #00ffaa;
+}
+
+#labelinputname {
+    color: aliceblue;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+#header, #chatheader {
+    background-color: #420239;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+#headermainframe{
+    background-color: #272626;
+    padding: 6px;
+    border-radius: 12px;
+}
+
+#chatheadermainframe {
+    padding: 20px;
+}
+
+#btn_close, #btn_min, #btn_max {
+    border: none;
+    border-radius: 999px;
+    min-width: 14px;
+    min-height: 14px;
+    padding: 0;
+}
+
+#btn_close {
+    background-color: #ff5f57;
+}
+
+#btn_min {
+    background-color: #ffbd2e;
+}
+
+#btn_max {
+    background-color: #28c940;
+}
+
+#btn_close:hover {
+    background-color: #434343;
+    box-shadow: 0 0 4px #ff5f57;
+}
+
+#btn_min:hover {
+    background-color: #434343;
+    box-shadow: 0 0 4px #ffbd2e;
+}
+
+#btn_max:hover {
+    background-color: #434343;
+    box-shadow: 0 0 4px #28c940;
+}
+
+
+#nameinputfield {
+    padding: 6px;
+    font-size: 14px;
+    border-radius: 15px;
+    color:#fff;
+    background-color: #484747;
+    border-color: #420239;
+}
+
+#connectbutton {
+    border: none;
+    border-radius: 15px;
+    padding: 4px 8px;
+    color: #df37c9;
+    background-color: #420239;
+    border-color: #7c036c;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#main_label {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+#labelprogramtitle {
+    color: #63055e;
+    font-size: 40px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-family: "Noto Sans", sans-serif;
+
+}
+
+#sendbutton {
+    background-color: #640056;
+    color: #df37c9;
+    border: none;
+    border-radius: 20px;
+    padding: 4px 8px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#chat_display {
+    background-color: #434343;
+    border-radius: 25px;
+}
+
+#chat_display text {
+    background-color: #434343;
+    color: wheat;
+    border-radius: 25px;
+    border-color: #df37c9;
+    border-width: 1px;
+    font-size: 16px;
+    padding-left: 20px;
+}
+
+#chat_display {
+    font-size: 25px;     
+    padding-left: 20px;     
+    padding-top: 10px;
+ }

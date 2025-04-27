@@ -1,0 +1,13 @@
+[package]
+name = "your-client-name"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+aes-gcm = "0.10"         # AES-GCM encryption (for the key)
+rand = "0.8"             # For generating random keys
+
+
+[[bin]]
+name = "rust_client"
+path = "src/clientmain.rs"
